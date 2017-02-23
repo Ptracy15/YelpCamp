@@ -17,3 +17,12 @@ body {
 .backLink {
     text-align: center;
 }
+
+.trademark {
+    text-align: center;
+    font-size: 8px;
+}
+
+#delete-form {
+    display: inline;
+}

@@ -30,29 +30,29 @@ function seedDB(){
         }
         console.log("removed campground");
         
-        // add a few campgrounds
-        data.forEach(function(seed){
-            Campground.create(seed, function(err, campground){
-                if(err){
-                    console.log(err);
-                } else {
-                    console.log("added a campground");
-                    // create comment
-                    Comment.create({
-                        text: "this place is great, but i wish there was internet",
-                        author: "Homer"
-                    }, function(err, comment){
-                        if(err){
-                            console.log(err)
-                        } else {
-                            campground.comments.push(comment);
-                            campground.save();
-                            console.log("created new comment")
-                        }
-                    });
-                }
-            });
-        });
+        // // add a few campgrounds
+        // data.forEach(function(seed){
+        //     Campground.create(seed, function(err, campground){
+        //         if(err){
+        //             console.log(err);
+        //         } else {
+        //             console.log("added a campground");
+        //             // create comment
+        //             Comment.create({
+        //                 text: "this place is great, but i wish there was internet",
+        //                 author: "Homer"
+        //             }, function(err, comment){
+        //                 if(err){
+        //                     console.log(err)
+        //                 } else {
+        //                     campground.comments.push(comment);
+        //                     campground.save();
+        //                     console.log("created new comment")
+        //                 }
+        //             });
+        //         }
+        //     });
+        // });
     });
 }
 module.exports = seedDB;
