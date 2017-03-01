@@ -34,7 +34,6 @@ router.post("/", middleware.isLoggedIn, function(req, res){
            console.log(err);
        } else {
            // reidirect back to campgrounds page
-           console.log(newlyCreated);
            res.redirect("/campgrounds");
        }
     });
@@ -61,6 +60,9 @@ router.get("/:id", function(req, res){
 router.get("/:id/edit", middleware.checkCampgroundOwnership, function(req, res){
     // is user logged in
     Campground.findById(req.params.id, function(err, foundCampground){
+        if(err){
+            console.log("This shouldn't be possible if the middelware is working!")
+        }
         res.render("campgrounds/edit", {campground: foundCampground});
     });
 });

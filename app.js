@@ -48,6 +48,7 @@ app.use(function(req, res, next){
     next();
 });
 
+// Pushes routes to app and adds beginning portion of routes
 app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundsRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
