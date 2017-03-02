@@ -11,6 +11,14 @@ body {
     padding: 0;
 }
 
+.caption {
+    text-align: center;
+}
+
+.thumbnail p {
+    text-align: center;
+}
+
 .thumbnail .caption-full {
     padding: 9px;
 }
